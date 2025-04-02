@@ -4,8 +4,8 @@
 <template>
 
   <div class="newsletter-container flex ">
-    <div class="form-container mr-[4em] flex flex-col justify-center">
-      <h1 class="text-preset-1 mb-[1em] blue-800">Stay updated!</h1>
+    <div class="form-container lg:mr-[4em] flex flex-col justify-center">
+      <h1 class="text-preset-1 md:mb-[1em] mb-[.8em] blue-800">Stay updated!</h1>
       <p class="text-preset-2 mb-[2em] blue-800">Join 60,000+ product managers receiving monthly<br> updates on:</p>
       <ul class="text-preset-2 mb-[2em] list-inside blue-800">
         <li class="flex items-center mb-[1em]">
@@ -23,7 +23,7 @@
       </ul>
       <form action="">
         <div class="form-element flex flex-col">
-          <label for="email" class="text-preset-3 mb-[.5em]">Email address</label>
+          <label for="email" class="text-preset-3 mb-[.5em] blue-800">Email address</label>
           <input class="mb-[1.5em] border-solid border-1 border-[#949494] rounded-lg p-4" type="email" placeholder="email@company.com" required />
           <button type="submit" class="bg-[#242742] p-5 text-white rounded-lg text-preset-2-bold">Subscribe to monthly newsletter</button>
         </div>
@@ -31,12 +31,13 @@
     </div>
     <div class="img-container">
       <img src="../assets/illustration-sign-up-desktop.svg" class="w-full hidden lg:flex" alt="" />
-      <img src="../assets/illustration-sign-up-mobile.svg" class="w-full lg:hidden rounded-[2.2em] mb-[2.5em]" alt="" />
+      <img src="../assets/illustration-sign-up-mobile.svg" class="w-full lg:hidden md:rounded-[2.2em] mb-[2.5em]" alt="" />
     </div>
   </div>
 </template>
 
 <style scoped>
+
   @media(max-width: 768px) {
     .newsletter-container {
       display: grid;
@@ -53,5 +54,14 @@
       grid-area: form-container;
     }
   }
+
+  @media(max-width:450px) {
+    .form-container{
+      padding: 0 2em;
+      margin-top: -4.5em;
+    }
+  }
+
+
 
 </style>

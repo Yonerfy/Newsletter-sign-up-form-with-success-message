@@ -4,11 +4,13 @@
 body {
   background-color: #36384D;
   height: 100vh;
+  display: flex;
+  place-items: center;
 }
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem;
   font-weight: normal;
   font-family: 'Roboto', sans-serif;
   background-color: #fff;
@@ -60,12 +62,21 @@ body {
   line-height: 150%;
   letter-spacing: 0;
 }
-.text-preset-4{}
-
-@media (min-width: 1024px) {
+/* need to remove the flex display from the body */
+@media (max-width: 768px) {
   body {
-    display: flex;
-    place-items: center;
+    display: initial;
+  }
+}
+@media (max-width: 450px) {
+  #app {
+    border-radius: 0;
+    padding: 0;
+    padding-bottom: 4em;
+  }
+  body {
+    background-color: #fff;
   }
 
 }
+
