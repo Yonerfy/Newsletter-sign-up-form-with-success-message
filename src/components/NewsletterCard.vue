@@ -1,4 +1,20 @@
 <script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const emailError = ref(false)
+const email = ref('')
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const router = useRouter()
+
+function handleEmailChange(event) {
+  email.value = event.target.value
+  emailError.value = !emailRegex.test(email.value)
+}
+function onSubmit(){
+  if(!emailError.value && emailRegex.test(email.value)) {
+    router.push('/thanks')
+  }
+}
 
 </script>
 <template>
@@ -21,11 +37,14 @@
           And much more!
         </li>
       </ul>
-      <form action="">
+      <form @submit.prevent="onSubmit" action="">
         <div class="form-element flex flex-col">
-          <label for="email" class="text-preset-3 mb-[.5em] blue-800">Email address</label>
-          <input class="mb-[1.5em] border-solid border-1 border-[#949494] rounded-lg p-4" type="email" placeholder="email@company.com" required />
-          <button type="submit" class="bg-[#242742] p-5 text-white rounded-lg text-preset-2-bold">Subscribe to monthly newsletter</button>
+          <div class="labels-container flex justify-between">
+            <label for="email" class="text-preset-3 mb-[.5em] blue-800">Email address</label>
+            <label for="email" class="text-preset-3 mb-[.5em] text-red-600" v-if="emailError">Valid email required</label>
+          </div>
+          <input class="mb-[1.5em] border-solid border-1 border-[#949494] rounded-lg p-4 " :class="{error : emailError}" type="email" @change="handleEmailChange"  :email="email" placeholder="email@company.com" required />
+          <button type="submit" class="bg-[#242742] p-5 text-white rounded-lg text-preset-2-bold" id="sub-btn" >Subscribe to monthly newsletter</button>
         </div>
       </form>
     </div>
@@ -38,6 +57,24 @@
 
 <style scoped>
 
+  .error, .error:focus{
+    border-color: oklch(0.577 0.245 27.325) !important;
+    color: oklch(0.577 0.245 27.325) !important;
+    background-color: #ff61551c;
+  }
+  .error:focus{
+    outline: none;
+  }
+  .error::placeholder{
+    color: oklch(0.577 0.245 27.325);
+  }
+  #sub-btn {
+    transition: all 2s ease-out;
+  }
+  #sub-btn:hover {
+    background: linear-gradient(90deg, #FF6155 0%, #FF8B00 100%);
+    cursor: pointer;
+  }
   @media(max-width: 768px) {
     .newsletter-container {
       display: grid;

@@ -75,7 +75,7 @@ body {
   }
   #app {
     padding: 0;
-
+    background-color: #fff;
   }
   #app .home[data-v-b4e148ca] {
     border-radius: 0;
