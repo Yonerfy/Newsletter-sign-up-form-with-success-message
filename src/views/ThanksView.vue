@@ -12,7 +12,9 @@
           A confirmation email has been sent to <span class="text-preset-2-bold">ash@loremcompany.com</span>.
           Please open it and click the button inside to confirm your subscription.
         </p>
-        <button type="submit" class="bg-[#242742] p-5 text-white rounded-lg text-preset-2-bold w-full thank-submit">Dismiss message</button>
+        <RouterLink to="/">
+          <button type="submit" class="bg-[#242742] p-5 text-white rounded-lg text-preset-2-bold w-full thank-submit">Dismiss message</button>
+        </RouterLink>
     </div>
   </div>
   </div>
