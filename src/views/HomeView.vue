@@ -19,7 +19,7 @@ import NewsletterCard from '../components/NewsletterCard.vue'
     justify-content: space-around;
   }
   @media (max-width: 768px) {
-    .home[data-v-b4e148ca] {
+    .home {
       height: initial;
       display: initial;
       width: 100%;
