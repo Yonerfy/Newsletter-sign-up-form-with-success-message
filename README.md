@@ -15,12 +15,12 @@ The email address is not formatted correctly
 View the optimal layout for the interface depending on their device's screen size
 See hover and focus states for all interactive elements on the page
 
-![Design]()
+![Design](desktop.png)
 
 Your users should be able to:
 See the social media share links when they click the share icon
 View the optimal layout for each page depending on their device's screen size
 See hover states for all interactive elements on the page
 
-[code live]()
+[live version](https://yonerfy.github.io/Newsletter-sign-up-form-with-success-message-live/)
 
